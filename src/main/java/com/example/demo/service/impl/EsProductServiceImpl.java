@@ -65,7 +65,7 @@ public class EsProductServiceImpl implements EsProductService {
             EsProduct esProduct = esProductList.get(0);
             result = (EsProduct) productRepository.save(esProduct);
         }
-        return null;
+        return result;
     }
 
     @Override

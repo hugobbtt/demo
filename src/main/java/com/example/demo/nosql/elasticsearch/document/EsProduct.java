@@ -18,6 +18,7 @@ public class EsProduct implements Serializable {
     private static final long serialVersionUID = 1520873443486626602L;
     @Id
     private Long id;
+//    @Field(type = FieldType.Long)
     private Long brandId;
     @Field(type = FieldType.Keyword)
     private String brandName;
