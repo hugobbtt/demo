@@ -7,11 +7,9 @@ import com.example.demo.mbg.model.UmsAdmin;
 import com.example.demo.mbg.model.UmsAdminExample;
 import com.example.demo.mbg.model.UmsPermission;
 import com.example.demo.service.UmsAdminService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
@@ -25,9 +23,9 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+@Slf4j
 public class UmsAdminServiceImpl implements UmsAdminService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UmsAdminServiceImpl.class);
     @Autowired
     private UserDetailsService userDetailsService;
     @Autowired
@@ -89,7 +87,7 @@ public class UmsAdminServiceImpl implements UmsAdminService {
             SecurityContextHolder.getContext().setAuthentication(authentication);
             token = jwtTokenUtil.generateToken(userDetails);
         } catch (AuthenticationException e) {
-            LOGGER.warn("登录异常:{}", e.getMessage());
+            log.warn("登录异常:{}", e.getMessage());
         }
         return token;
     }

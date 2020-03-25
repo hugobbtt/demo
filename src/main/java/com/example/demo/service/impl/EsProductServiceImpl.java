@@ -4,8 +4,6 @@ import com.example.demo.dao.EsProductDao;
 import com.example.demo.nosql.elasticsearch.document.EsProduct;
 import com.example.demo.nosql.elasticsearch.repository.EsProductRepository;
 import com.example.demo.service.EsProductService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,7 +18,6 @@ import java.util.List;
 @Service
 public class EsProductServiceImpl implements EsProductService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(EsProductServiceImpl.class);
     @Autowired
     private EsProductDao productDao;
     @Autowired
