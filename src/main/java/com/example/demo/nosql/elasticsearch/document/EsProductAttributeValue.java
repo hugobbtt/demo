@@ -1,10 +1,14 @@
 package com.example.demo.nosql.elasticsearch.document;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.io.Serializable;
 
+@Getter
+@Setter
 public class EsProductAttributeValue implements Serializable {
 
     private static final long serialVersionUID = -6281230072279327406L;
@@ -19,43 +23,4 @@ public class EsProductAttributeValue implements Serializable {
     @Field(type = FieldType.Keyword)
     private String name;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getProductAttributeId() {
-        return productAttributeId;
-    }
-
-    public void setProductAttributeId(Long productAttributeId) {
-        this.productAttributeId = productAttributeId;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

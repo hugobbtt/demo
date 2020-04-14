@@ -2,6 +2,7 @@ package com.example.demo.dto;
 
 import com.example.demo.mbg.model.UmsAdmin;
 import com.example.demo.mbg.model.UmsPermission;
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,15 +15,11 @@ import java.util.stream.Collectors;
  * SpringSecurity需要的用户详情
  * Created by macro on 2018/4/26.
  */
+@AllArgsConstructor
 public class AdminUserDetails implements UserDetails {
 
     private UmsAdmin umsAdmin;
     private List<UmsPermission> permissionList;
-
-    public AdminUserDetails(UmsAdmin admin, List<UmsPermission> permissionList) {
-        this.umsAdmin = admin;
-        this.permissionList = permissionList;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
